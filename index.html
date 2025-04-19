@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>George Hernandez</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #444;
+            padding: 5px 0;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+        nav li {
+            margin: 0 10px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1em;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        section {
+            width: 60%;
+            padding: 10px;
+            background: white;
+            margin: 20px auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: all 0.2s ease-in-out;
+        }
+
+        h2 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 12px;
+        }
+
+        .gallery-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            max-width: 100%;
+            margin: auto;
+        }
+
+        .gallery-container article {
+            flex: 1 1 40%;
+            text-align: center;
+        }
+
+        .gallery-container .full-width {
+            flex: 1 1 80%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .gallery-container img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Hover Effect */
+.gallery-container img:hover {
+    transform: scale(1.05) translateY(-5px); 
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.2); 
+    
+
+    
+}
+        .best-seller,
+        .New-Arrival,
+        .Limited-Edition {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #020202;
+            margin-top: 8px;
+        }
+        
+
+        @media (max-width: 1500px) {
+            section {
+                width: 80%;
+            }
+            .gallery-container {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        /* Contact Form Styling */
+        #contact {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: 30px auto;
+            text-align: left;
+        }
+
+        #contact h2 {
+            text-align: center;
+            font-size: 1.8em;
+            font-weight: bold;
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin-top: 12px;
+            font-size: 1em;
+            color: #333;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 12px;
+            margin-top: 6px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 1em;
+            background-color: #f9f9f9;
+        }
+        fieldset {
+    border: 2px solid #ccc; /* Increase border thickness */
+    padding: 60px; /* Increase padding */
+    border-radius: 8px; /* Optional: makes edges rounded */
+}
+
+        textarea {
+            resize: vertical;
+            height: 120px;
+        }
+
+
+        .contact-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        button {
+            flex: 1;
+            padding: 12px;
+            font-size: 1em;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
+        }
+
+        button[type="submit"] {
+            background: linear-gradient(to right, #0071e3, #005bb5);
+            color: white;
+        }
+
+        button[type="submit"]:hover {
+            background: linear-gradient(to right, #005bb5, #004499);
+            transform: scale(1.05);
+        }
+
+        button[type="reset"] {
+            background: linear-gradient(to right, #86868b, #6e6e73);
+            color: white;
+        }
+
+        button[type="reset"]:hover {
+            background: linear-gradient(to right, #6e6e73, #515154);
+            transform: scale(1.05);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9em;
+            color: #6e6e73;
+        }
+
+        nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1em;
+    display: inline-block;
+    transition: color 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+nav a:hover {
+    color: rgb(27, 157, 201);
+    transform: scale(1.2); /* Zoom-in effect */
+}
+
+        
+    </style>
+</head>
+<body>
+    <header><h1>Product Gallery</h1></header>
+    
+    <nav>
+        <ul>
+            <li><a href="#featuredphoto">Featured</a></li>
+            <li><a href="#salesgallery">Sales</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+    
+    <h2>Featured Photos</h2>
+    
+    <section id="featuredphoto" class="gallery-container">
+        <article>
+            <a href="https://www.apple.com/ae/iphone-16/">
+                <img src="https://www.apple.com/newsroom/images/2024/09/apple-introduces-iphone-16-and-iphone-16-plus/article/geo/Apple-iPhone-16-lineup-geo-240909_big.jpg.large_2x.jpg">
+            </a>
+            <p class="best-seller">Best Seller</p>
+        </article>
+        <article>
+            <a href="https://www.apple.com/ph/macbook-air/">
+                <img src="https://www.apple.com/ph/macbook-air/images/overview/mac-plus-iphone/mac_iphone__n2863l0ne0q6_large.jpg" alt="MacBook and iPhone">
+            </a>
+            <p class="New-Arrival">New Arrival</p>
+        </article>
+        <article class="full-width">
+            <a href="https://www.apple.com/ph/ipad-11/">
+                <img src="https://www.apple.com/v/ipad-11/a/images/overview/get-things-done/chip__czit3dxc9s4m_large.jpg" alt="iPad 11 Chip">
+            </a>
+            <p class="Limited-Edition">Limited Edition</p>
+        </article>
+    </section>
+
+    <h2>Sales Gallery</h2>
+
+    <section id="salesgallery" class="gallery-container">
+        <article>
+            <a href="https://www.apple.com/ph/shop/buy-ipad">
+                <img src="https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/ipad-card-40-pro-202405?wid=680&hei=528&fmt=p-jpg&qlt=95&.v=1713920820026">
+            </a>
+            <p class="best-seller">50% Off</p>
+        </article>
+        <article>
+            <a href="https://www.apple.com/ph/iphone-16/">
+                <img src="https://www.apple.com/v/iphone-16/e/images/overview/design/all_colors__flhn5cmb1t26_large.jpg">
+            </a>
+            <p class="New-Arrival">Buy 1 Get 1</p>
+        </article>
+        <article class="full-width">
+            <a href="https://www.apple.com/ph/shop/buy-mac/macbook-air">
+                <img src="https://www.apple.com/v/mac/home/cc/images/overview/select/product_tile_mba_13_15__fx2g3qlubdym_large.png" alt="iPad 11 Chip">
+            </a>
+            <p class="Limited-Edition">Special Discount</p>
+        </article>
+    </section>
+
+
+
+    <h2> Gallery</h2>
+
+    <section id="gallery" class="gallery-container">
+        <article>
+            <a href="https://www.apple.com/ph/shop/mac/accessories">
+                <img src="https://www.apple.com/v/mac/home/cc/images/overview/essentials/essentials_accessories__dglhsic54owi_large.jpg">
+            </a>
+            <p class="best-seller">Mac accessories</p>
+        </article>
+        <article>
+            <a href="https://www.apple.com/ph/studio-display/">
+                <img src="https://www.apple.com/v/mac/home/cc/images/overview/essentials/essentials_display__bk3i351qm0c2_large.jpg">
+                
+            </a>
+            </a>
+            <p class="New-Arrival">Studio Display</p>
+        </article>
+        <article class="full-width">
+            <a href="https://www.apple.com/ph/shop/buy-airpods/airpods-max/midnight">
+                <img src="https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/airpods-max-select-202409-midnight?wid=400&hei=400&fmt=jpeg&qlt=90&.v=1724927451276">
+            </a>
+            <p class="Limited-Edition">Quality Sounds</p>
+        </article>
+    </section>
+
+<!-- Contact -->
+<section id="contact">
+    <h2>Contact Us</h2>
+   
+
+    <form action="#" method="post">
+        <fieldset>
+            
+            <label for="fullname">Full Name:</label><br/>
+            <input type="text" id="fullname" name="fullname"/><br/><br/>
+            
+            <label for="email">Email Adress:</label><br/>
+            <input type="text" id="email" name="email"/><br/><br/>
+            
+            <label for="phone">Subject:</label><br/>
+            <input type="text" id="phone" name="phone"/><br/><br/>
+            
+            <p>Your Concern:</p>
+            <textarea name="message" cols="20" rows="4" placeholder=""></textarea><br/><br/>
+            
+      
+            
+            <!-- Buttons -->
+            <button type="submit">Submit</button>
+        
+        </fieldset>
+    </form>
+</section>
+
+
+
+
+    <footer>
+        <p>&copy; 2025 George. All rights reserved.</p>
+    </footer>
+</body>
+</html>
